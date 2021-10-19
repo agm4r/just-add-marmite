@@ -9,19 +9,22 @@ const RecipeCard = ({ recipe }) => {
     return ( 
         <div className="card">
             <div className="featured">
-                <Image
-                    src={"https:" + thumbnail.fields.file.url}
+                <Image 
+                    src={'https:' + thumbnail.fields.file.url}
                     width={'800px'}
                     height={'500px'}
                 />
             </div>
             <div className="content">
-                <h4>{ title }</h4>
-                <p>Takes approx { cookingTime } mins to make</p>
+                <div className="info">
+                    <h4>{ title }</h4>
+                    <p>Takes approx { cookingTime } mins to make</p>
+                </div>
+                <div className="actions">
+                    <Link href={'/recipes/' + slug}><a>Cook this</a></Link>
+                </div>
             </div>
-            <div className="actions">
-                <Link href={'recipes/' + slug}><a>Cook this</a></Link>
-            </div>
+            
 
             <style jsx>{`
                 .card {
